@@ -3,16 +3,12 @@
 
 <head>
     <title>To Do</title>
-    <style >
-    	table {
-    		margin-top:5px;
-    	}
-    </style>
-
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<div class="content">
     <h1>To Do App</h1>
 
 <!--- Input form for To Dos --->
@@ -73,6 +69,7 @@
 		</cfoutput>
     </table>
 
+</div>
 
   	<!--- 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> 
 	<script> 
