@@ -3,7 +3,7 @@
 
 <head>
     <title>To Do</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="styles/toDoStyle.css">
 </head>
 
 <body>
@@ -13,7 +13,7 @@
 
 <!--- Input form for To Dos --->
     <cfform>
-        <p>Title: <cfinput type="text" name="title" size="35" ></p>
+        <p>Title: <cfinput type="text" name="title" size="35"></p>
         <p>Description: <cftextarea name="textarea" rows="1" cols="31" wrap="off"></cftextarea></p>
         <cfinput type="submit" name="submitForm" value="submit">
     </cfform>
@@ -34,14 +34,19 @@
 
 <!--- If Statement to delete entry by id from database (still working on this) --->
 	<cfif isDefined("Form.deleteBtn")>
-		<cfparam name="deleteByID" default="" type="string">  
-		<cfset deleteByID = 3>
+		<!---<cfparam name="deleteByID" default="" type="string">  
+		<cfset deleteByID = 26>
 		<cfoutput>
     		<cfquery name="myQuery" datasource="toDoApp_DB">
         		DELETE FROM toDos
         		WHERE id = <cfqueryparam value="#deleteByID#" cfsqltype="CF_SQL_INTEGER">
     		</cfquery>
-		</cfoutput>
+		</cfoutput>--->
+		<script>
+			function reply_click(clicked_id){
+				alert(clicked_id);
+			}
+		</script>
 	</cfif>
 
 <!--- Query to grab data from database --->
@@ -71,18 +76,16 @@
 
 </div>
 
-  	<!--- 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> 
-	<script> 
-		$(".deleteBtn").click(function(){
-			let value = $(".deleteBtn").attr("data-value");
-			alert(value)
-		})
-	</script>
-	<script type="text/javascript">
-  		function reply_click(clicked_id){
-      		alert(clicked_id);
-  		}
-	</script>--->
+<!--- <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>  
+<script type="text/javascript">
+	function reply_click(clicked_id){
+		alert(clicked_id);
+	}
+	$(".deleteBtn").click(function(){
+		let value = $(".deleteBtn").attr("data-value");
+		alert(value)
+	})
+</script>--->
 
 </body>
 
